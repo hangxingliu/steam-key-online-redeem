@@ -120,7 +120,7 @@ export function onRedeem(redeemInfo) {
 				({ subId, name: redeemInfo.packages[subId] }));
 		});
 	updateUI();
-	if (redeemInfo.result == STOP_NOW)
+	if (redeemInfo.details == STOP_NOW)
 		stopEveryThings();	
 }
 
