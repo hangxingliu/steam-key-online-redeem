@@ -2,6 +2,7 @@
 /// <reference path="index.d.ts" />
 
 import api from "./api";
+import exporter from "./export";
 import * as utils from "./utils";
 import * as status from "./status";
 import * as redeem from "./redeem";
@@ -21,6 +22,7 @@ const BTN_LOGIN = '#btnLogin';
 const BTN_LOGINING = '#btnLogining';
 const BTN_REDEEM = '#btnRedeem';
 const BTN_LANGUAGE = '#btnSwitchLanguage';
+const BTN_EXPORT = '#linkExport';
 
 const ALERT_LOGIN_FAILED = '#alertLoginFailed';
 
@@ -63,6 +65,8 @@ function main() {
 		installI18NButton();
 	});
 
+	$(BTN_EXPORT).click(() => exporter(redeem.getTasks()));
+	
 	$(MODAL_2FA).on('shown.bs.modal', () => $(INPUT_2FA).val('').focus());
 	//#endregion listening events
 

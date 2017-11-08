@@ -19,6 +19,16 @@ export let strings = {
 	steam_guard_from: 'You can in your steam mobile app or you email',
 	btn_continue: 'Continue',
 
+	"export": 'Export',	
+	cancel: 'Cancel',
+	export_file_name: 'Export File Name',	
+	export_settings: 'Export Settings',
+	export_asf: 'ASF Format',
+	export_redeemed: 'Redeemed',
+	export_failed: 'Failed',
+	export_waiting: 'Waiting for redeeming',
+	export_results: 'Export results',
+
 	label_keys: 'Keys:',
 	redeem: 'Redeem',
 	redeem_result: 'Redeem Result',

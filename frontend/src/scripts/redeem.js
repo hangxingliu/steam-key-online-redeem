@@ -109,6 +109,8 @@ function updateUI() {
 	}).join('\n'));
 }
 
+export function getTasks() { return tasks; }
+
 /** @param {RedeemDetail} redeemInfo */
 export function onRedeem(redeemInfo) { 
 	tasks.filter(task => task.key == redeemInfo.key)
@@ -129,9 +131,7 @@ export function bindAPI(redeemMethod) { redeem = redeemMethod; }
 export function bindStringProvider(provider) { str = provider; }
 export function bindStopNowCallback(cb) { stopNowCallback = cb; }
 
-/**
- * @param {string[]} keys 
- */
+/** @param {string[]} keys  */
 export function add(keys) { 
 	console.log(`adding ${keys.length} keys.`);
 	let added = 0;

@@ -19,6 +19,16 @@ export let strings = {
 	steam_guard_from: '你可以从你的手机APP或电子邮箱中找到',
 	btn_continue: '继续登录',
 
+	"export": '导出',
+	cancel: '取消',
+	export_file_name: '导出文件名',
+	export_settings: '导出设置',
+	export_asf: 'ASF格式',	
+	export_redeemed: '已兑换的',
+	export_failed: '兑换失败的',
+	export_waiting: '未兑换的',
+	export_results: '导出结果',
+
 	label_keys: '激活码(支持很多很多个):',
 	redeem: '激活',
 	redeem_result: '激活结果',
