@@ -29,6 +29,10 @@ export let strings = {
 	export_waiting: 'Waiting for redeeming',
 	export_results: 'Export results',
 
+	notification: 'Desktop notification after finish, disconnected or rate limited ',
+	notification_unsupported: '(Your browser does not support it!)',
+	finish: 'Redeem finished!',
+	
 	label_keys: 'Keys:',
 	redeem: 'Redeem',
 	redeem_result: 'Redeem Result',

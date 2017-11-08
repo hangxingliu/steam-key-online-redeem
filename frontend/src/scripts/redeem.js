@@ -7,6 +7,8 @@
 	0X6DR-D7N2B-2LZCD	41220 Chompy Chomp Chomp
 */
 
+import * as notification from "./notification"
+
 const CARD_RESULT = '#cardResult';
 const TB_RESULT = '#tbResult';
 const TXT_REDEEM_FATAL = '#txtRedeemFatal';
@@ -60,6 +62,7 @@ function timerLoop() {
 		}
 		if (finish) {
 			timerHandle = void 0;
+			notification.finish();
 			return;//all finish	
 		}
 	}
@@ -74,6 +77,7 @@ function stopEveryThings() {
 	clearTimeout(timerHandle);
 	timerHandle = void 0;
 	$(TXT_REDEEM_FATAL).show();
+	notification.rateLimited();
 	stopNowCallback && stopNowCallback();
 }
 

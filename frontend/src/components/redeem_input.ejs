@@ -10,6 +10,19 @@
 			</div>
 			<div class="row mt-3">
 				<div class="col-12">
+					<div class="form-check">
+						<label class="form-check-label">
+							<input id="cbNotification" type="checkbox" 
+								class="form-check-input">
+							<span data-i18n="notification"> 
+								Desktop notification after finish, disconnected or rate limited 
+							</span>
+							<b data-i18n="notification_unsupported" style="display: none"
+								id="txtNotificationUnsupported">
+								(Your browser does not support it!)
+							</b>
+						</label>
+					</div>
 					<div class="form-group">
 						<label for="inputKeys" data-i18n="label_keys">Keys:</label>
 						<textarea class="form-control" id="inputKeys" rows="9"

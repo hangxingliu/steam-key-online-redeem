@@ -6,7 +6,7 @@
  * @returns {string[]}
  */
 export function extractKeysFromText(text) {
-	text = text.trim();
+	text = text.trim().toUpperCase();
 	let regexp = /([0-9,A-Z]{5}\-){2,4}[0-9,A-Z]{5}/g;
 	let keys = [];
 	let matched = null;

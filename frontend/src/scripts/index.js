@@ -7,6 +7,7 @@ import * as utils from "./utils";
 import * as status from "./status";
 import * as redeem from "./redeem";
 import * as i18n from "./i18n/index";
+import * as notification from "./notification";
 
 const MODAL_2FA = '#modal2FA';
 
@@ -41,11 +42,14 @@ function main() {
 		.on('login', onLogin)
 	redeem.bindAPI(api().redeem);
 	redeem.bindStringProvider(i18n.result);
-	
+	redeem.bindStopNowCallback(() => $('#cardInput').hide());
+
 	installI18NButton();
 
 	//show connecting status
 	status.connecting();
+
+	notification.init();
 
 	//#region listening events
 	$(FORM_LOGIN).submit(onClickLogin);
@@ -70,6 +74,11 @@ function main() {
 	$(MODAL_2FA).on('shown.bs.modal', () => $(INPUT_2FA).val('').focus());
 	//#endregion listening events
 
+	//debug
+	// setTimeout(function () {
+	// 	username = 'Sofia';
+	// 	onLogin(null, { steamID: '[Hola!]' });
+	// }, 1000);
 }
 
 function installI18NButton() { 

@@ -29,6 +29,10 @@ export let strings = {
 	export_waiting: '未兑换的',
 	export_results: '导出结果',
 
+	notification: '桌面通知(兑换完成/断开连接/兑换超限时通知)',
+	notification_unsupported: '(你的浏览器不支持!)',
+	finish: '兑换完成!',
+
 	label_keys: '激活码(支持很多很多个):',
 	redeem: '激活',
 	redeem_result: '激活结果',

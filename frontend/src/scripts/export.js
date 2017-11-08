@@ -48,9 +48,12 @@ export default function exporter(_tasks) {
 	$(TXT_FAILED_COUNT).text(f);
 	$(TXT_WAITING_COUNT).text(w);
 
-	$(CB_REDEEMED).removeAttr(CHECKED);
-	$(CB_FAILED).attr(CHECKED, CHECKED);
-	$(CB_WAITING).attr(CHECKED, CHECKED);
+	//@ts-ignore
+	$(CB_REDEEMED)[0].checked = false;
+	//@ts-ignore
+	$(CB_FAILED)[0].checked = true;
+	//@ts-ignore
+	$(CB_WAITING)[0].checked = true;
 
 	$(BTN_EXPORT).off('click').on('click', onExport);
 	$(MODAL_EXPORT).modal();
