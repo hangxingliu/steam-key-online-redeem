@@ -1,0 +1,68 @@
+name: steam key online redeem
+src: 
+    base: frontend/src
+    assets: 
+    pages: 
+        - "index.html"
+    scripts:
+        - "scripts/index.js"
+    concat:
+    styles:
+        - "index.scss"
+dist: 
+    base: frontend/dist
+    clean: true
+
+watch:
+    - "src"
+hook:
+    # before_all: "node ../demo-hooks/BEFORE_ALL"
+    # after_build: "node ../demo-hooks/AFTER_BUILD"
+    # parameters: build_counter:interger
+
+    # async_before_all: "node ../demo-hooks/BEFORE_ALL"
+    # async_after_build: "node ./HOOK_INSTALL_VENDOR_TO_DIST.js"
+
+processor:
+    source_map:
+        enable: false
+        js: true
+        css: true
+    browserify:
+        transform:
+            - name: "babelify"
+              options: 
+                plugins:
+                    - "transform-es2015-modules-commonjs"
+    watchify:
+        delay: 100
+        ignoreWatch:
+            - '**/node_modules/**'
+        poll: false
+    sass: true
+    less: false
+    autoprefixer: true
+    browser_sync: 
+        # could not using browser_sync because webScoket
+        enable: true
+        proxy: "127.0.0.1:3999"
+        notify: false
+        open: false
+        # server: "dist"
+    babel: 
+        enable: true
+        babelrc: frontend/.babelrc
+    html_minifier:
+        enable: true
+        removeComments: true
+        collapseWhitespace: true
+    ejs: true
+    pug: false
+    ejs_variables:
+        enable: true
+        files:
+            - frontend/variables.yaml
+    ejs_template_tags: 
+        enable: false
+        selector: script[type="text/template"]
+        

@@ -1,0 +1,55 @@
+@mixin margin-y($size) { margin-top: $size; margin-bottom: $size; }
+@mixin margin-x($size) { margin-left: $size; margin-right: $size; }
+
+// I don't use google fonts because it is inaccessible sometimes in China mainland
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), 
+        local('Montserrat-Regular'), 
+        url(fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+html, body,
+button, input, select,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.navbar {
+    font-family:  "Montserrat",
+         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+        "Microsoft Yahei UI", "Microsoft Yahei",
+        "Helvetica Neue", Arial, sans-serif, 
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+
+    font-weight: 300;
+}
+
+$MAX_WIDTH: 960px;
+.navbar > .container {
+    max-width: $MAX_WIDTH;
+}
+body > .container {
+    margin-top: 80px;
+    max-width: $MAX_WIDTH;
+}
+
+.alert p{ margin-bottom: 0; }
+
+#cardResult {
+    th:first-child, td:first-child {
+        @media (max-width: 575px) { display: none;}
+    }
+}
+
+#footer {
+    @include margin-y(4em);
+    li {
+        float: left;
+        @include margin-x(1.5em);
+    }
+    p {
+        clear: left;
+        margin-bottom: 0;
+    }
+}

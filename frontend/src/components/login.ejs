@@ -1,0 +1,60 @@
+<div id="cardLogin" class="row" style="display: none">
+<div class="col-12">
+<div class="card border-primary mt-2">
+	<div class="card-body">
+		<form id="formLogin" action="#">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-sm-6 offset-sm-3">
+					<h1 data-i18n="title_login">Steam Login</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-sm-6 offset-sm-3">
+					<div id="alertLoginFailed" style="display: none"
+						class="alert alert-dismissible alert-danger">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<strong data-i18n="login_failed">Login Failed!</strong> 
+						<p id="txtLoginFailed"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-12 col-sm-6 offset-sm-3">
+					<div class="form-group">
+						<label for="inputUser" data-i18n="login_username">Steam Username</label>
+						<input type="text" id="inputUser" class="form-control" 
+							placeholder="Your Steam Username" />
+						<div class="form-control-feedback text-danger"></div>
+					</div>	
+				</div>
+			</div>
+			<div class="row mt-1">
+				<div class="col-12 col-sm-6 offset-sm-3">
+					<div class="form-group">
+						<label for="inputPasswd" data-i18n="login_password">Password</label>
+						<input type="password" id="inputPasswd" class="form-control" 
+							placeholder="Your Steam Password" />
+						<div class="form-control-feedback text-danger"></div>
+					</div>	
+				</div>
+			</div>
+			<div class="row mt-1">
+				<div class="col-12 col-sm-6 offset-sm-3" >
+					<button id="btnLogin" type="submit" class="btn btn-primary"
+						data-i18n="login" >
+						Login
+					</button>
+					<button id="btnLogining" type="button" style="display: none"
+						class="btn btn-primary disabled"
+						data-i18n="logining">
+						Logining ...
+					</button>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>
+</div>
+</div>

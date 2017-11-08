@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-12">
+
+		<div id="statusUnsupported" class="card-status card text-white bg-danger" style="">
+			<div class="card-body">	
+				<i class="ion-android-warning"></i>
+				<span data-i18n="status_unsupported"> 
+					Your browser is unsupported. 
+					(recommended browser: Chrome, Firefox, Edge)
+					(and please keep your browser up to date)
+				</span>
+			</div>
+		</div>
+
+		<div id="statusConnecting" class="card-status card text-black bg-light" style="display: none">
+			<div class="card-body">	
+				<i class="ion-android-cloud"></i>
+				<span data-i18n="status_connecting"> Connecting to server... </span>
+				<div class="progress" style="margin-top: 10px">
+					<div class="progress-bar progress-bar-striped progress-bar-animated" 
+						role="progressbar" 
+						aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" 
+						style="width: 100%"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="statusConnected" class="card-status card text-black bg-light" style="display: none">
+			<div class="card-body">	
+				<i class="ion-android-done"></i>
+				<span data-i18n="status_connected"> 
+					Connected, you can login now. </span>
+			</div>
+		</div>
+
+
+		<div id="statusLogined" class="card-status card text-white bg-primary" style="display: none">
+			<div class="card-body">	
+				<i class="ion-android-cloud-done"></i>
+				<span data-i18n="status_logined"> 
+					You have been login, you can redeem keys now. Username: </span>
+				<b id="txtUsername">Gabe</b>
+			</div>
+		</div>
+
+		<div id="statusBroken" class="card-status card text-white bg-dark" style="display: none">
+			<div class="card-body">	
+				<i class="ion-android-sad"></i>
+				<span id="txtBrokenReason"> Connection is broken. </span>
+				<b data-i18n="status_refresh">Please refresh this page.</b>
+			</div>
+		</div>
+	</div>
+</div>

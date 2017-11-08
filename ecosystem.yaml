@@ -1,0 +1,7 @@
+apps:
+  - script: ./server/index.js
+    name: steam-key-online-redeem
+    instances: 0
+    exec_mode: cluster
+    env:
+      NODE_ENV: production

@@ -1,0 +1,7 @@
+{
+	"port": 3999,
+	"id": "Your redeem server id",
+    "name": "Your redeem server id",
+    "log_enabled": false,
+	"post_address": "URL redeeming log post to"
+}

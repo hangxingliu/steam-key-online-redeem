@@ -1,0 +1,11 @@
+{
+	"presets": [
+		"es2015"
+	],
+	"plugins": [
+		"babel-plugin-minify-mangle-names",
+		"babel-plugin-transform-merge-sibling-variables"
+	],
+	"comments": false,
+	"compact": "true"
+}

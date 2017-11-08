@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Steam Key Redeem</title>
+
+    <link href="index.css" rel="stylesheet">
+    <link href="style/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+</head>
+
+<body>
+    <%- include("./components/navbar.ejs") %>
+    <div class="container">
+        <%- include("./components/status.ejs") %> 
+        
+        <%- include("./components/login.ejs") %> 
+        <%- include("./components/redeem_result.ejs") %>
+        <%- include("./components/redeem_input.ejs") %>
+
+        <%- include("./components/footer.ejs") %>
+    </div>
+    <%- include("./components/modal_2fa.ejs") %>     
+        
+            <!-- Table -->
+            <div class="table-responsive table-condensed">
+                <table class="table table-hover" style="display: none">
+                    <caption>激活记录：</caption>
+                    <thead>
+                        <th>No.</th>
+                        <th>Key</th>
+                        <th>结果</th>
+                        <th>详情</th>
+                        <th>Sub</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div> <!-- /table div ends -->
+
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
