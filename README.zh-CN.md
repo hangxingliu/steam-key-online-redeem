@@ -1,11 +1,20 @@
 # Steam Key 在线激活
 
+[->English README.md<-](README.md)
+
 自动化的,可跨区的 Steam Key 在线批量激活工具 
 
 例如:
 
 - 将此程序部署于俄罗斯服务器上即可远程兑换俄区游戏的Key
 - 用此程序可以一次性兑换拥有一对游戏Key的大包
+
+位于香港的免费激活服务器: <https://steamis.me> .
+感谢 [Htroy (@FsHtroy)](https://github.com/FsHtroy) 提供此演示服务器.
+
+## 预览
+
+![](screenshots/screenshot.png)
 
 ## 使用
 
@@ -44,3 +53,6 @@
 本项目是基于 [zyfworks/steam-key][ORIGINAL_REPO] 开发的
 
 原作者: [Makazeu (@zyfworks)](https://github.com/zyfworks)
+
+
+[ORIGINAL_REPO]: https://github.com/zyfworks

@@ -9,6 +9,13 @@ For example:
 - Deploying this server in other country for redeeming keys cross area.
 - Redeeming a keys bundle only one click
 
+HongKong demo redeeming server: <https://steamis.me> .
+Thanks [Htroy (@FsHtroy)](https://github.com/FsHtroy) for supporting this server.
+
+## Screenshot
+
+![](screenshots/screenshot.png)
+
 ## Hot to use
 
 ### Installing Node.js Environment
