@@ -17,7 +17,7 @@
 
 ### 安装相关依赖,编辑配置文件
 
-1. 在这个目录下运行`npm i --no-dev`命令
+1. 在这个目录下运行`npm install --only=producation`命令
 2. 修改文件名`serverconfig.example.json`为`serverconfig.json`
 3. [可选] 编辑 `serverconfig.json` 文件
 
@@ -28,7 +28,7 @@
 
 ### 运行程序(部署在远端)
 
-1. 运行命令`npm i pm2`
+1. 运行命令`npm install pm2 -g`
 2. 运行命令`npm run deploy`
 3. 浏览器访问(默认3999端口)
 

@@ -19,7 +19,7 @@ At least
 
 ### Installing dependencies, Configuring 
 
-1. Executing command `npm i --no-dev`
+1. Executing command `npm install --only=producation`
 2. Renaming file `serverconfig.example.json` to `serverconfig.json`
 3. [Optional] Configuring `serverconfig.json`
 
@@ -30,7 +30,7 @@ At least
 
 ### Launching(Deploy in server)
 
-1. Executing command `npm i pm2`
+1. Executing command `npm install pm2 -g`
 2. Executing command `npm run deploy`
 3. Visiting in browser(Default port is 3999)
 
