@@ -5,3 +5,7 @@ apps:
     exec_mode: cluster
     env:
       NODE_ENV: production
+    watch:
+      - server
+      - serverconfig.json
+      - package.json

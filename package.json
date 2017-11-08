@@ -1,6 +1,6 @@
 {
 	"name": "steam-key-online-redeem",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A online steam key redeeming website",
 	"main": "server/index.js",
 	"author": "hangxingliu",
@@ -8,7 +8,8 @@
 	"scripts": {
 		"start": "node server/index.js",
 		"deploy": "pm2 start ecosystem.yaml",
-		"build": "node ./builder/build.js"
+		"build": "node ./builder/build.js",
+		"build-live": "node ./builder/build.js -w"
 	},
 	"dependencies": {
 		"express": "^4.16.2",

@@ -3,6 +3,8 @@
 
 import * as utils from './utils';
 
+//heartbeats duration: 10seconds
+const HEART_BEAT_DURATION = 10 * 1000;
 
 /** @type {WebSocket} */
 let ws = null;
@@ -25,7 +27,7 @@ export default function api() {
 	ws = new WebSocket(`${protocol}//${location.host}/ws`);
 
 	ws.onopen = () => { 
-		pingpongHandle = setInterval(send, 30 * 1000, {action: 'ping'});
+		pingpongHandle = setInterval(send, HEART_BEAT_DURATION, {action: 'ping'});
 	};
 	ws.onmessage = (rawData, flags) => {
 		/** @type {WebSocketDataFromServer} */

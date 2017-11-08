@@ -17,8 +17,8 @@ const STOP_NOW = 'RateLimited';
 // duration for one key: 80 sec / 9 = 9 sec 
 const DURATION = 9 * 1000;
 
-// 1 second
-const TIMER_DURATION = 1 * 1000;
+// 300 ms
+const TIMER_DURATION = 300;
 
 /** @type {RedeemTask[]} */
 let tasks = [];
