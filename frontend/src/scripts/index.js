@@ -48,8 +48,7 @@ function main() {
 		.on('redeem', detail => redeem.onRedeem(detail))
 		.on('login', onLogin)
 	
-	// comment next line for debug
-	// redeem.bindAPI(api().redeem);
+	redeem.bindAPI(api().redeem);
 	redeem.bindStringProvider(i18n.result);
 
 	installI18NButton();
