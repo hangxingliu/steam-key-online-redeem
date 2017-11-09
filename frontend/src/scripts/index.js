@@ -8,6 +8,7 @@ import * as status from "./status";
 import * as redeem from "./redeem";
 import * as i18n from "../i18n/index";
 import * as notification from "./notification";
+import * as debug from "./debug";
 
 const MODAL_2FA = '#modal2FA';
 
@@ -34,13 +35,21 @@ let password = '';
 
 $(main);
 function main() {
+	//export debug object to global for debugging in console
+	debug.init({
+		onLogin,
+		setUsername: _username => username = _username
+	});
+
 	api()
 		.on('connect', status.connected)
 		.on('disconnect', () => status.broken(i18n.get('disconnect_with_server')))
 		.on('auth', () => $(MODAL_2FA).modal({ keyboard: false, backdrop: 'static' }))
 		.on('redeem', detail => redeem.onRedeem(detail))
 		.on('login', onLogin)
-	redeem.bindAPI(api().redeem);
+	
+	// comment next line for debug
+	// redeem.bindAPI(api().redeem);
 	redeem.bindStringProvider(i18n.result);
 	redeem.bindStopNowCallback(() => $('#cardInput').hide());
 
@@ -73,12 +82,6 @@ function main() {
 	
 	$(MODAL_2FA).on('shown.bs.modal', () => $(INPUT_2FA).val('').focus());
 	//#endregion listening events
-
-	//debug
-	// setTimeout(function () {
-	// 	username = 'Sofia';
-	// 	onLogin(null, { steamID: '[Hola!]' });
-	// }, 1000);
 }
 
 function installI18NButton() { 
