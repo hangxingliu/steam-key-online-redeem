@@ -52,7 +52,7 @@ export let strings = {
 	],
 	status_connecting: '正在连接到服务器...',
 	status_connected: '已连接,现在你可以登录你的Steam账号了.',
-	status_logined: '已登录,输入Key点击"激活"吧, 用户名: ',
+	status_loggedin: '已登录,输入Key点击"激活"吧, 用户名: ',
 	status_refresh: '请刷新过当前页面.',
 
 	made_by: '本项目由我: ',

@@ -53,7 +53,7 @@ export let strings = {
 	],
 	status_connecting: 'Connecting to server... ',
 	status_connected: 'Connected, you can login now.',
-	status_logined: 'You have been login, you can redeem keys now. Username:',
+	status_loggedin: 'You have been logged in, you can redeem keys now. Username:',
 	status_refresh: 'Please refresh this page.',
 
 	made_by: 'Made by ',
