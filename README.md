@@ -16,7 +16,7 @@ Thanks [Htroy (@FsHtroy)](https://github.com/FsHtroy) for supporting this server
 
 ![](screenshots/screenshot.png)
 
-## Hot to use
+## How to use
 
 ### Installing Node.js Environment
 
@@ -26,7 +26,7 @@ At least
 
 ### Installing dependencies, Configuring 
 
-1. Executing command `npm install --only=producation`
+1. Executing command `npm install --only=production`
 2. Renaming file `serverconfig.example.json` to `serverconfig.json`
 3. [Optional] Configuring `serverconfig.json`
 

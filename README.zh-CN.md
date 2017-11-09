@@ -26,7 +26,7 @@
 
 ### 安装相关依赖,编辑配置文件
 
-1. 在这个目录下运行`npm install --only=producation`命令
+1. 在这个目录下运行`npm install --only=production`命令
 2. 修改文件名`serverconfig.example.json`为`serverconfig.json`
 3. [可选] 编辑 `serverconfig.json` 文件
 
