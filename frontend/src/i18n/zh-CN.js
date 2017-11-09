@@ -5,6 +5,12 @@ export let strings = {
 	server: '服务器: ',
 	disconnect_with_server: '与服务器断开连接! ',
 	
+	security_information: '安全提示',
+	si1_1: '1. 请确保你的网址是 ',
+	si1_2: ' 开头的. (避免在不安全的网络环境下账号被盗)',
+	si2: '2. 你的Steam账户信息将会在你 关掉本页面 或 与服务器断开连接 后 从服务器上清除',
+	si3: '3. 这个项目是开源的. 搭建你属于你自己的激活服务器是最好和最安全的选择.',
+	
 	login_failed: '登录失败!',
 
 	login_missing_username: '请输入你的Steam账号',

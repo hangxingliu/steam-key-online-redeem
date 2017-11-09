@@ -5,6 +5,16 @@ export let strings = {
 	server: 'Server: ',
 	disconnect_with_server: 'Disconnected with server!',	
 
+	security_information: 'Security Information',
+	si1_1: '1. Please make sure link of this page is starts with ',
+	si1_2: ' (Avoiding account be stolen by others)',
+	si2: [
+		'2. Your steam account information will be removed from server after ',
+		'you closed this page or disconnected with server.'
+	],
+	si3: '3. This is an open-source project. Deploying it on your own server is a best way to redeem.',
+	
+
 	login_failed: 'Login Failed!',
 
 	login_missing_username: 'please input your steam username',
