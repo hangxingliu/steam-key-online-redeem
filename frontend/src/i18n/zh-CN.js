@@ -45,8 +45,8 @@ export let strings = {
 	redeem: '激活',
 	redeem_result: '激活结果',
 	redeem_limited: [
-		'致命错误: Steam 限制了你的激活(短时间内激活/失败次数太多) ',
-		'建议对这个账号的游戏激活在一个小时后再进行'
+		'激活暂停中: Steam 限制了一个小时内最多只能激活 40 个游戏',
+		'激活任务将在一个小时后重新开始'
 	],
 	table_no: 'No.',
 	table_key: 'Key',

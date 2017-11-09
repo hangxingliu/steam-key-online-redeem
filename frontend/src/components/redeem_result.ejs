@@ -10,9 +10,12 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div id="txtRedeemFatal" data-i18n="redeem_limited"
-								class="alert alert-danger" style="display: none">
-								Fatal Error: Rate Limited. You can redeem keys for this account after at least 1 hour.
+							<div id="txtRedeemPause" class="alert alert-danger" style="display: none">
+								<span data-i18n="redeem_limited">
+									Redeeming is pause: steam redeem rate limited. 
+									Redeeming will be continue an hour later.
+								</span>
+								(<b id="unfrozenTime">00:00</b>)
 							</div>
 						</div>
 					</div>
@@ -31,7 +34,7 @@
 											Key</th>
 										<th data-i18n="table_status" >
 											Status</th>
-										<th data-i18n="table_name"  style="min-width: 300px">
+										<th data-i18n="table_name"  style="min-width: 200px">
 											Name</th>
 									</tr>
 								</thead>

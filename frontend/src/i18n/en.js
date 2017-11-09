@@ -45,8 +45,8 @@ export let strings = {
 	redeem: 'Redeem',
 	redeem_result: 'Redeem Result',
 	redeem_limited: [
-		'Fatal Error: Rate Limited. ',
-		'You can redeem keys for this account after at least 1 hour.'
+		'Redeeming is pause: steam redeem rate limited. ',
+		'Redeeming will be continue an hour later.'
 	],
 	table_no: 'No.',
 	table_key: 'Key',

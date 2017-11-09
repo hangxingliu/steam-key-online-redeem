@@ -51,7 +51,6 @@ function main() {
 	// comment next line for debug
 	// redeem.bindAPI(api().redeem);
 	redeem.bindStringProvider(i18n.result);
-	redeem.bindStopNowCallback(() => $('#cardInput').hide());
 
 	installI18NButton();
 

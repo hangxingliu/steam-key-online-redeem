@@ -11,14 +11,19 @@ import * as notification from "./notification"
 
 const CARD_RESULT = '#cardResult';
 const TB_RESULT = '#tbResult';
-const TXT_REDEEM_FATAL = '#txtRedeemFatal';
+
+const TXT_REDEEM_PAUSE = '#txtRedeemPause';
+const TXT_UNFROZEN_TIME = '#unfrozenTime';
 
 // Rate limit, stop every things
-const STOP_NOW = 'RateLimited';
+const RATE_LIMITED = 'RateLimited';
 const NEED_MAIN = 'DoesNotOwnRequiredApp';
 
 // duration for one key: 80 sec / 9 = 9 sec 
 const DURATION = 9 * 1000;
+
+// duration of rate limited: 1 hour ( +10 minutes)
+const RATE_LIMITED_DURATION = (/*60 + 10*/1) * 60 * 1000;
 
 // 300 ms
 const TIMER_DURATION = 300;
@@ -29,7 +34,11 @@ let keyUniq = {};
 let lastRedeemTime = 0;
 
 let timerHandle = void 0;
-let stopNowCallback = null;
+
+/**
+ * The timestamp rate limited be unfrozen
+ */
+let rateLimitedUnfrozenTime = 0;
 
 /**
  * redeem interface
@@ -54,17 +63,28 @@ function executeTask(task) {
 	lastRedeemTime = Date.now();
 	updateUI();	
 }
+
 function timerLoop() { 
 	let now = Date.now();
 	let finish = true;
-	if (now > lastRedeemTime + DURATION &&
-		tasks.filter(task => task.status == 'Redeeming').length == 0) {
+	if (now < rateLimitedUnfrozenTime) { 
+		let wait = Math.floor((rateLimitedUnfrozenTime - now) / 1000);
+		$(TXT_UNFROZEN_TIME).text(`${to2(Math.floor(wait / 60))}:${to2(wait % 60)}`);
+		
+		timerHandle = setTimeout(timerLoop, TIMER_DURATION);
+		return;
+	}
 
+	if (now > lastRedeemTime + DURATION &&
+		tasks.filter(t => t.status == 'Redeeming').length == 0) {
+		
+		$(TXT_REDEEM_PAUSE).hide();
+		
 		/** @type {RedeemTask} */
 		let retryTask = null;
 
 		for (let task of tasks) { 
-			if (task.status == 'Waiting') {
+			if (task.status == 'Waiting' || task.resultMsg == 'RateLimited') {
 				executeTask(task);
 				finish = false;
 				break;
@@ -88,17 +108,20 @@ function timerLoop() {
 	}
 	timerHandle = setTimeout(timerLoop, TIMER_DURATION);
 }
+function to2(i) { return i < 10 ? `0${i}` : `${i}`; }
+
+
 function startTimer() { 
 	if (typeof timerHandle == 'undefined')
 		timerHandle = setTimeout(timerLoop, TIMER_DURATION);
 }
 
-function stopEveryThings() { 
-	clearTimeout(timerHandle);
-	timerHandle = void 0;
-	$(TXT_REDEEM_FATAL).show();
+function onRateLimited() { 
+	rateLimitedUnfrozenTime = Date.now() + RATE_LIMITED_DURATION;
+	$(TXT_REDEEM_PAUSE).show();
+	$(TXT_UNFROZEN_TIME).text('--:--');
+
 	notification.rateLimited();
-	stopNowCallback && stopNowCallback();
 }
 
 const $LINK = $('<a target="_blank"></a>');
@@ -151,14 +174,13 @@ export function onRedeem(redeemInfo) {
 				({ subId, name: redeemInfo.packages[subId] }));
 		});
 	updateUI();
-	if (redeemInfo.details == STOP_NOW)
-		stopEveryThings();
+	if (redeemInfo.details == RATE_LIMITED)
+		onRateLimited();
 }
 
 /** @param {(keys: string[]) => any} redeemMethod */
 export function bindAPI(redeemMethod) { redeem = redeemMethod; }
 export function bindStringProvider(provider) { str = provider; }
-export function bindStopNowCallback(cb) { stopNowCallback = cb; }
 
 /** @param {string[]} keys  */
 export function add(keys) { 
