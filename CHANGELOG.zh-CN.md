@@ -1,16 +1,20 @@
 # CHANGELOG
 
+## 1.2.1 (2017/11/10)
+
+1. 修复了Node.js 6的BUG
+
 ## 1.2.0 (2017/11/10)
 
-1. More export filter options.
-2. Retry "DoesNotOwnRequiredApp" later automatically.
-3. Waiting 1 hour for continuing redeem after rate limited.
-4. Display server information.
-5. Add security information.
+1. 更多的导出选项
+2. 自动重试那些没有安装主游戏的DLC激活码
+3. 在遇到激活限制时 自动等待一个小时然后继续激活
+4. 显示服务器信息
+5. 增加了安全提示
 
 ## 1.1.0 (2017/11/09)
 
-1. Add desktop notification
-2. Add export
-3. Reduce heart-beat duration
-4. Fixed rate limited alert bug
+1. 添加了桌面通知
+2. 支持导出结果了
+3. 减小了心跳包的间隔
+4. 修复了激活超限的提示BUG

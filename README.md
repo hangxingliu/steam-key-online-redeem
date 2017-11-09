@@ -12,8 +12,9 @@ For example:
 HongKong demo redeeming server: <https://steamis.me> .
 Thanks [Htroy (@FsHtroy)](https://github.com/FsHtroy) for supporting this server.
 
-## 1.2.0 (2017/11/10)
+## 1.2.1 (2017/11/10)
 
+0. Fixed BUG on Node.js 6
 1. More export filter options.
 2. Retry "DoesNotOwnRequiredApp" later automatically.
 3. Waiting 1 hour for continuing redeem after rate limited.

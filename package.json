@@ -1,6 +1,6 @@
 {
 	"name": "steam-key-online-redeem",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A online steam key redeeming website",
 	"main": "server/index.js",
 	"author": "hangxingliu",
