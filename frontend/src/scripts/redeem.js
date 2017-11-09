@@ -23,7 +23,7 @@ const NEED_MAIN = 'DoesNotOwnRequiredApp';
 const DURATION = 9 * 1000;
 
 // duration of rate limited: 1 hour ( +10 minutes)
-const RATE_LIMITED_DURATION = (/*60 + 10*/1) * 60 * 1000;
+const RATE_LIMITED_DURATION = (60 + 10) * 60 * 1000;
 
 // 300 ms
 const TIMER_DURATION = 300;

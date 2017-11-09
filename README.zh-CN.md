@@ -12,6 +12,16 @@
 位于香港的免费激活服务器: <https://steamis.me> .
 感谢 [Htroy (@FsHtroy)](https://github.com/FsHtroy) 提供此演示服务器.
 
+## 1.2.0 (2017/11/10)
+
+1. 更多的导出选项
+2. 自动重试那些没有安装主游戏的DLC激活码
+3. 在遇到激活限制时 自动等待一个小时然后继续激活
+4. 显示服务器信息
+5. 增加了安全提示
+
+[CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md)
+
 ## 预览
 
 ![](screenshots/screenshot.png)

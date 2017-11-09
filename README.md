@@ -12,9 +12,20 @@ For example:
 HongKong demo redeeming server: <https://steamis.me> .
 Thanks [Htroy (@FsHtroy)](https://github.com/FsHtroy) for supporting this server.
 
+## 1.2.0 (2017/11/10)
+
+1. More export filter options.
+2. Retry "DoesNotOwnRequiredApp" later automatically.
+3. Waiting 1 hour for continuing redeem after rate limited.
+4. Display server information.
+5. Add security information.
+
+[CHANGELOG.md](CHANGELOG.md)
+
 ## Screenshot
 
 ![](screenshots/screenshot.png)
+
 
 ## How to use
 
