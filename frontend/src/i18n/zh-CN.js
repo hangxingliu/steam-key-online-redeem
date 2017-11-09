@@ -69,6 +69,7 @@ export let strings = {
 	license_prefix: '本项目开源协议:',
 	icon_from: '图标来源 ',
 	framework_on: '前端页面基于 ',
+	theme_from: '主题来源 ',	
 	fonts_from_1: '使用了字体 (',
 	fonts_from_2: ') 来源于',
 	donate_link: '捐赠链接: ',
@@ -76,7 +77,7 @@ export let strings = {
 		'你的捐赠能撑起开源的美好明天, ',
 		'也能让免费的公用SteamKey激活服务器走的更远'
 	],
-
+	
 	'result:RetryLater': ' (稍后重试)',
 
 	'result:InvalidPassword': '无效的密码',

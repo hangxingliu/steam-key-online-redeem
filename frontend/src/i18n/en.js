@@ -70,6 +70,7 @@ export let strings = {
 	license_prefix: 'Code released under the',
 	icon_from: 'Icons from ',
 	framework_on: 'Frontend page based on ',
+	theme_from: 'Theme from ',
 	fonts_from_1: 'Web fonts (',
 	fonts_from_2: ') are copied fro',
 	donate_link: 'Donate links: ',
