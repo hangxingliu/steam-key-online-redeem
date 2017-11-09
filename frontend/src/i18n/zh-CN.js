@@ -77,6 +77,8 @@ export let strings = {
 		'也能让免费的公用SteamKey激活服务器走的更远'
 	],
 
+	'result:RetryLater': ' (稍后重试)',
+
 	'result:InvalidPassword': '无效的密码',
 	'result:TwoFactorCodeMismatch': '安全令错误',
 	'result:Limited account': '受限用户暂无法使用',

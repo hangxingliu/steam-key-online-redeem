@@ -11,6 +11,15 @@ type RedeemDetail = {
 	details: string;
 	packages: { [subId: string]: string };
 };
+type RedeemStatus = "Waiting" | "Redeeming" | "OK" | "Fail";
+type RedeemMessage = "" |
+	"NoDetail" |
+	"AlreadyPurchased" |
+	"DuplicateActivationCode" |
+	"BadActivationCode" |
+	"RateLimited" |
+	"DoesNotOwnRequiredApp" |
+	"RestrictedCountry";
 
 type RedeemTask = {
 	no: number;
@@ -18,8 +27,12 @@ type RedeemTask = {
 	/**
 	 * Waiting|Redeeming|OK|Failed
 	 */
-	status: "Waiting" | "Redeeming" | "OK" | "Fail";
+	status: RedeemStatus;
 	resultMsg: string;
+	/**
+	 * try to redeem times.
+	 */
+	redeemTimes: number,
 	packages: {
 		subId: string;
 		name: string;

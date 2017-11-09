@@ -77,7 +77,8 @@ export let strings = {
 		'Your donation is power for open-source ',
 		'and free redeeming server.'
 	],
-
+	
+	'result:RetryLater': ' (Retry later)',
 
 	'result:InvalidPassword': 'Invalid password',
 	'result:TwoFactorCodeMismatch': 'Invalid two factor code',

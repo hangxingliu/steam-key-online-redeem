@@ -15,6 +15,7 @@ const TXT_REDEEM_FATAL = '#txtRedeemFatal';
 
 // Rate limit, stop every things
 const STOP_NOW = 'RateLimited';
+const NEED_MAIN = 'DoesNotOwnRequiredApp';
 
 // duration for one key: 80 sec / 9 = 9 sec 
 const DURATION = 9 * 1000;
@@ -41,29 +42,48 @@ let redeem = (keys) => void keys;
  */
 let str = (result) => result;
 
+/** @param {RedeemTask} task */
+function executeTask(task) {
+	console.log(`redeeming task #${task.no} (${task.redeemTimes || 'first time'})`)
+
+	redeem([task.key]);
+	
+	task.status = 'Redeeming';
+	task.redeemTimes++;
+	
+	lastRedeemTime = Date.now();
+	updateUI();	
+}
 function timerLoop() { 
 	let now = Date.now();
 	let finish = true;
 	if (now > lastRedeemTime + DURATION &&
 		tasks.filter(task => task.status == 'Redeeming').length == 0) {
 
+		/** @type {RedeemTask} */
+		let retryTask = null;
+
 		for (let task of tasks) { 
 			if (task.status == 'Waiting') {
-				redeem([task.key]);
-
-				lastRedeemTime = now;
+				executeTask(task);
 				finish = false;
-				task.status = 'Redeeming';
-
-				updateUI();
-				
 				break;
 			}
+			// if all task finish then retry this task
+			if (task.resultMsg == NEED_MAIN && task.redeemTimes == 1)
+				retryTask = task;
 		}
+
 		if (finish) {
-			timerHandle = void 0;
-			notification.finish();
-			return;//all finish	
+			if (retryTask) {
+				executeTask(retryTask);
+			} else {
+				// finish and has not retry task
+				timerHandle = void 0;
+				notification.finish();
+				console.log('redeem finish!');
+				return;//all finish	
+			}
 		}
 	}
 	timerHandle = setTimeout(timerLoop, TIMER_DURATION);
@@ -101,13 +121,18 @@ function updateUI() {
 				packages += $link.prop('outerHTML') + '<br/>';
 			}
 		}
+		let status = '';
+		if (task.resultMsg == NEED_MAIN && task.redeemTimes == 1)
+			status = `${str(task.resultMsg)}<b>${str('RetryLater')}</b>`;
+		else if (task.status == 'Redeeming')
+			status = str(task.status);
+		else	
+			status = ` <${statusWeight}>${str(task.status)}</${statusWeight}> ${str(task.resultMsg)}`;
+
 		return `<tr>
 			<td>${task.no}</td>
 			<td><code>${task.key}</code></td>
-			<td class="${statusColor}">
-				<${statusWeight}>${str(task.status)}</${statusWeight}>
-				${str(task.resultMsg)}
-			</td>
+			<td class="${statusColor}"> ${status} </td>
 			<td>${packages}</td>
 		</tr>`;
 	}).join('\n'));
@@ -127,7 +152,7 @@ export function onRedeem(redeemInfo) {
 		});
 	updateUI();
 	if (redeemInfo.details == STOP_NOW)
-		stopEveryThings();	
+		stopEveryThings();
 }
 
 /** @param {(keys: string[]) => any} redeemMethod */
@@ -149,7 +174,7 @@ export function add(keys) {
 		keyUniq[key] = true;
 		tasks.push({
 			no: tasks.length, key, status: 'Waiting', 
-			resultMsg: '', packages: []
+			resultMsg: '', packages: [], redeemTimes: 0
 		});
 	}
 	if (added) {
