@@ -2,7 +2,7 @@
 /// <reference path="./index.d.ts" />
 
 import download from 'downloadjs';
-import * as i18n from './i18n/index';
+import * as i18n from '../i18n/index';
 
 const MODAL_EXPORT = '#modalExport';
 

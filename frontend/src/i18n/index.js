@@ -1,5 +1,5 @@
 //@ts-check
-/// <reference path="../index.d.ts" />
+/// <reference path="../scripts/index.d.ts" />
 
 import * as zhCN from "./zh-CN";
 import * as en from "./en";

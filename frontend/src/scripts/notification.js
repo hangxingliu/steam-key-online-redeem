@@ -1,7 +1,7 @@
 //@ts-check
 /// <reference path="./index.d.ts" />
 
-import * as i18n from "./i18n/index";
+import * as i18n from "../i18n/index";
 
 const KEY = 'steam-key-redeem-notification';
 

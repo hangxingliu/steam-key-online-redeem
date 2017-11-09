@@ -6,7 +6,7 @@ import exporter from "./export";
 import * as utils from "./utils";
 import * as status from "./status";
 import * as redeem from "./redeem";
-import * as i18n from "./i18n/index";
+import * as i18n from "../i18n/index";
 import * as notification from "./notification";
 
 const MODAL_2FA = '#modal2FA';
