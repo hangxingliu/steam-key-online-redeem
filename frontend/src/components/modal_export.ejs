@@ -20,26 +20,27 @@
 							<span data-i18n="export_asf"> ASF Format </span>
 						</label>
 					</div>
-					<div class="form-check">
-						<label class="form-check-label">
-							<input id="cbRedeemed" type="checkbox" class="form-check-input">
-							<span data-i18n="export_redeemed"> Redeemed </span>
-							(<b id="txtRedeemedCount">0</b>)
-						</label>
-					</div>
-					<div class="form-check">
-						<label class="form-check-label">
-							<input id="cbFailed" type="checkbox" class="form-check-input">
-							<span data-i18n="export_failed"> Failed </span>
-							(<b id="txtFailedCount">0</b>)
-						</label>
-					</div>
-					<div class="form-check">
-						<label class="form-check-label">
-							<input id="cbWaiting" type="checkbox" class="form-check-input">
-							<span data-i18n="export_waiting"> Waiting for redeeming </span>
-							(<b id="txtWaitingCount">0</b>)
-						</label>
+				</fieldset>
+				<fieldset>
+					<legend data-i18n="export_filter">Export Filter</legend>
+					<div class="list-group">
+						<% 
+						exportItems = [
+							'redeemed',
+							'waiting',
+							'already',
+							'rate',
+							'country',
+							'required',
+						];
+						for(let item of exportItems) {%>
+						<a class="list-group-item list-group-item-action export-filter"
+							href="javascript:;" data-filter="<%=item%>">
+							<i class="ion-android-checkbox-outline-blank"></i>
+							<span data-i18n="export_filter_<%=item%>"></span>
+							<span class="badge badge-primary float-right">0</span>
+						</a>
+						<% } %>
 					</div>
 				</fieldset>
 			</div>

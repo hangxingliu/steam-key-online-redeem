@@ -28,6 +28,14 @@ export let strings = {
 	export_failed: 'Failed',
 	export_waiting: 'Waiting for redeeming',
 	export_results: 'Export results',
+	export_filter: 'Export Filter',
+	
+	export_filter_redeemed: 'Redeemed',
+	export_filter_waiting: 'Waiting',
+	export_filter_already: 'Failed: Already Purchased',
+	export_filter_rate: 'Failed: Rate Limited',
+	export_filter_country: 'Failed: Restricted Country',
+	export_filter_required: 'Failed: Does Not Own Required App',
 
 	notification: 'Desktop notification after finish, disconnected or rate limited ',
 	notification_unsupported: '(Your browser does not support it!)',

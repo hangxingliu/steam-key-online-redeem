@@ -41,6 +41,9 @@ body > .container {
         @media (max-width: 575px) { display: none;}
     }
 }
+.export-filter {
+    i {margin-right: 1em;}
+}
 
 #footer {
     @include margin-y(4em);

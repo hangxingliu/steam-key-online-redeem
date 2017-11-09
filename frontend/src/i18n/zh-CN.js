@@ -28,6 +28,14 @@ export let strings = {
 	export_failed: '兑换失败的',
 	export_waiting: '未兑换的',
 	export_results: '导出结果',
+	export_filter: '筛选',
+	
+	export_filter_redeemed: '已兑换的',
+	export_filter_waiting: '排队中的',
+	export_filter_already: '失败:已拥有的',
+	export_filter_rate: '失败:兑换次数上限',
+	export_filter_country: '失败:区域限制',
+	export_filter_required: '失败:需要主游戏',
 
 	notification: '桌面通知(兑换完成/断开连接/兑换超限时通知)',
 	notification_unsupported: '(你的浏览器不支持!)',
