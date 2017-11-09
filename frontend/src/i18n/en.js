@@ -2,6 +2,7 @@ export let strings = {
 	title: "Steam Key Redeem",
 	title_login: 'Steam Login',
 
+	server: 'Server: ',
 	disconnect_with_server: 'Disconnected with server!',	
 
 	login_failed: 'Login Failed!',

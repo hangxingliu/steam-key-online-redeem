@@ -36,7 +36,7 @@ export default function api() {
 			return console.warn('Unknown ws message: ', rawData);
 		console.log('Received ws message. action:', data.action)
 		if (data.action == 'connect')
-			return emit('connect');
+			return emit('connect', data);
 		if (data.action == 'logOn')
 			return emit('login', data.result == 'success' ? null : data.message, data.detail);
 		if (data.action == 'authCode')

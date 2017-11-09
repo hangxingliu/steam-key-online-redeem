@@ -7,7 +7,7 @@ import * as i18n from '../i18n/index';
 /** @type {{[name: string]: (task: RedeemTask) => boolean}} */
 const FILTER = {
 	redeemed: t => t.status == 'OK',
-	waiting: t => t.status == 'Waiting',
+	waiting: t => t.status == 'Waiting' || t.status == 'Redeeming',
 	already: t => t.status == 'Fail' && t.resultMsg == 'AlreadyPurchased',
 	rate: t => t.status == 'Fail' && t.resultMsg == 'RateLimited',
 	country: t => t.status == 'Fail' && t.resultMsg == 'RestrictedCountry',

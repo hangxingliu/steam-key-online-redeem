@@ -3,7 +3,15 @@
 import * as notification from "./notification";
 
 export let connecting = () => displayStatus('statusConnecting');
-export let connected = () => {
+
+/** @param {WebSocketDataFromServer} serverInfo */
+export let connected = (serverInfo) => {
+	if (serverInfo) { 
+		$('#serverName').text(serverInfo.server);
+		$('#serverVersion').text('v' + serverInfo.version);
+	}
+
+
 	displayStatus('statusConnected');
 	$('#cardLogin').show();
 }

@@ -3,6 +3,8 @@ type WebSocketDataFromServer = {
 	detail: any;
 	result: string;
 	message: string;
+	server: string;
+	version: string;
 };
 
 type RedeemDetail = {

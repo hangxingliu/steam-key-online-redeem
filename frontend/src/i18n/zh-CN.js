@@ -2,6 +2,7 @@ export let strings = {
 	title: "Steam Key 批量激活工具",
 	title_login: '登录 Steam',
 
+	server: '服务器: ',
 	disconnect_with_server: '与服务器断开连接! ',
 	
 	login_failed: '登录失败!',

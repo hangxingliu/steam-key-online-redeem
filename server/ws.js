@@ -10,6 +10,7 @@ let config = require('./config');
 let allResults = require('./result-enum/result');
 let allPurchaseResults = require('./result-enum/purchase-result');
 let { debug } = require('./logger');
+let { version } = require('./version');
 
 module.exports = server => {
     const wss = new WebSocket.Server({ server });
@@ -19,9 +20,10 @@ module.exports = server => {
         //const location = url.parse(ws.upgradeReq.url, true);
         //console.log('Connected!');
         wsSafeSend(ws, {
-            'action': 'connect',
-            'result': 'success',
-            'server': config.name || 'Unknown',
+            action: 'connect',
+            result: 'success',
+			server: config.name || 'Unknown',
+			version
         });
 
 		/** @type {any} */
