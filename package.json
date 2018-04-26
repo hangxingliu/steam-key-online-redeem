@@ -13,9 +13,10 @@
 	},
 	"dependencies": {
 		"express": "^4.16.2",
-		"request": "^2.83.0",
+		"hoek": "^5.0.3",
+		"request": "^2.85.0",
 		"steam-user": "^3.23.2",
-		"ws": "^3.3.0",
+		"ws": "^3.3.3",
 		"xml2js": "^0.4.19"
 	},
 	"devDependencies": {
